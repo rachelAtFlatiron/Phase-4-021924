@@ -7,3 +7,5 @@ formik.md
 ./*/server/instance
 ./*/server/migrations
 ./*/server/Pipfile.lock
+./.venv
+theater_demo/server/__pycache__/

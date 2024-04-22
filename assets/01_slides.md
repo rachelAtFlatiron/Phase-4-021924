@@ -15,6 +15,7 @@ title: '01_intro_flask'
 - Setting up a simple flask instance 
 
 <aside class="notes">
+
 - front-end communicate with back-end <br />
 - json-server was a really basic API <br />
 - more complex APIs: data validation, authorization
@@ -27,6 +28,7 @@ title: '01_intro_flask'
 <img src='https://www.gao.gov/assets/extracts/726c56e9ccd46e3aaf3e4b7b75c60895/rId15_image3.png' width="800px" />
 
 <aside class="notes">
+
 - architecture, connect networks across the earth <br />
 - ocean cables, computers, data centers, server, satelites, wifi towers
 Fun Fact: ARPANET was the initial backbone of the internet which was created by the Department of Defense <br />
@@ -54,6 +56,7 @@ Fun Fact: ARPANET was the initial backbone of the internet which was created by 
 <img src="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview/fetching_a_page.png" width="900px"/>
 
 <aside class="notes">
+
 - sessions usually expire over a certain period of time <br />
 - sessions can be server side for large web apps, client side for smaller web apps 
 <br />
@@ -74,6 +77,7 @@ HTTP is the protocol describing the structure between client and server communic
 etc ... 
 
 <aside class="notes">
+
 - convential internet communications (http) data is transmitted in plaintext and will be readable if intercepted
 <br />
 - ssl: establishes encrypted link between server and client <br />
@@ -95,6 +99,7 @@ etc ...
 - dynamic software content is supplied by server.  a user makes a request, and the server processes the information and sends back a response
 
 <aside class="notes">
+
 - websites (single domain pages on the web) <br />
 - web apps (software accessible through the web)
 </aside>
@@ -116,6 +121,7 @@ etc ...
 - client waits for response (as a promise)
 
 <aside class="notes">
+
 - this goes back to the transferring of data packets <br />
 - response is a promise because it takes time for information to travel from wherever it originated, that's why I always say "we wait for the response"
 </aside>
@@ -130,6 +136,7 @@ pokeapi.co - domain name <br />
 api/v2/pokemon/ditto - path
 
 <aside class="notes">
+
 - use an example from github where you change the user who owns the repo, the branch name, etc. <br />
 - semantic ui github: https://github.com/Semantic-Org/Semantic-UI <br />
 - use an example by having a student's fork of repo and changing URL to navigate to my repo <br />
@@ -146,6 +153,7 @@ api/v2/pokemon/ditto - path
 201: `Created` - you probably did a POST request
 
 <aside class="notes">
+
 100's - informational
 200's - success
 300's - redirect
@@ -185,6 +193,7 @@ api/v2/pokemon/ditto - path
 <img src="https://www.atatus.com/blog/content/images/2022/12/crud-operations.png" width="500px" />
 
 <aside class="notes">
+
 - CRUD: for backend databases, primitive
 - HTTP/REST: method sent along with request, APIs
 - We will be focusing on GET/POST/PATCH/DELETE
@@ -199,6 +208,7 @@ api/v2/pokemon/ditto - path
 - easy to read
 
 <aside class="notes">
+
 - It’s a format to transfer data from client to server <br />
 - sometimes have to specify you will be sending JSON or expecting JSON
 - maybe show them postman at this time
@@ -220,6 +230,7 @@ api/v2/pokemon/ditto - path
 - small codebase - lots of control for developers
 
 <aside class="notes">
+
 - easy to extend core: flask has a lot of packages to add on, flask itself is very lightweight
 </aside>
 
@@ -234,6 +245,7 @@ api/v2/pokemon/ditto - path
 - Flask provides a development WSGI through Werkzeug with `flask run` command
 
 <aside class="notes">
+
 - WSGI <br />
     - interface between web servers (Apache, Nginx, local development server) and web apps <br />
     - specifically for Python frameworks <br />
