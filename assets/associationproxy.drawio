@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ZD6CClYJ62plTqRnanVq" name="Page-1">
-        <mxGraphModel dx="1103" dy="1557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="856" dy="1701" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -23,7 +23,7 @@
                 <mxCell id="2" value="Employee" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="110" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="EmployeeMeetings" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="3" value="EmployeeMeetings&lt;br&gt;meeting_id FK&lt;br&gt;employee_id FK" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="380" y="60" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" style="edgeStyle=none;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="4" target="3" edge="1">
@@ -46,40 +46,40 @@
                 <mxCell id="11" value="employee has many meetings&lt;br&gt;meetings has many employees" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="340" y="-40" width="190" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Employee:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="14" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Employee:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="100" y="360" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_meetings = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'EmployeeMeeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="15" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_meetings = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'EmployeeMeeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="385" width="690" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meetings = association_proxy(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="16" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meetings = association_proxy(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="420" width="560" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; EmployeeMeeting:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="17" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; EmployeeMeeting:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="120" y="470" width="220" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employees.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="18" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employees.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="495" width="560" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meeting_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meetings.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="19" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meeting_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meetings.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="515" width="560" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="20" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="20" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="550" width="650" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="21" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meeting = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="21" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;meeting = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="160" y="570" width="610" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Meeting:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="22" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Meeting:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="110" y="650" width="150" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_meetings = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'EmployeeMeeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="23" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_meetings = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'EmployeeMeeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'meeting'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="150" y="673" width="700" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employees = association_proxy(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="24" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employees = association_proxy(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee_meetings'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="150" y="740" width="560" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=red;" edge="1" parent="1" source="20">
+                <mxCell id="25" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=red;" parent="1" source="20" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="100" y="650" as="sourcePoint"/>
                         <mxPoint x="160" y="400" as="targetPoint"/>
@@ -89,7 +89,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="26" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=red;" edge="1" parent="1" source="21" target="23">
+                <mxCell id="26" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=red;" parent="1" source="21" target="23" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="50" y="620" as="sourcePoint"/>
                         <mxPoint x="150" y="620" as="targetPoint"/>
@@ -99,7 +99,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="34" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=classic;endSize=8;startSize=8;entryX=0.625;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=yellow;" edge="1" parent="1" target="24">
+                <mxCell id="34" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=classic;endSize=8;startSize=8;entryX=0.625;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=yellow;" parent="1" target="24" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="190" y="700" as="sourcePoint"/>
                         <mxPoint x="510" y="730" as="targetPoint"/>
@@ -109,7 +109,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="36" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=classic;endSize=8;startSize=8;entryX=0.91;entryY=-0.175;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.064;exitY=1.117;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=yellow;" edge="1" parent="1" source="21" target="23">
+                <mxCell id="36" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=classic;endSize=8;startSize=8;entryX=0.91;entryY=-0.175;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.064;exitY=1.117;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=yellow;" parent="1" source="21" target="23" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="740" y="600" as="sourcePoint"/>
                         <mxPoint x="840" y="600" as="targetPoint"/>
@@ -119,7 +119,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="37" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=1;exitY=0.75;exitDx=0;exitDy=0;endArrow=none;strokeColor=yellow;" edge="1" parent="1" source="21">
+                <mxCell id="37" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;exitX=1;exitY=0.75;exitDx=0;exitDy=0;endArrow=none;strokeColor=yellow;" parent="1" source="21" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="780" y="610" as="sourcePoint"/>
                         <mxPoint x="240" y="390" as="targetPoint"/>
@@ -130,8 +130,20 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="38" value="employees -&amp;gt; employee_meetings -&amp;gt; employee -&amp;gt; Employee" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="230" y="780" width="350" height="30" as="geometry"/>
+                <mxCell id="38" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;employees = Meeting.employee_meetings -&amp;gt; EmployeeMeeting.employee (which is an instance of Employee)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="790" width="700" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="one meeting has many employee_meetings" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="270" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="one employee has many employee_meetings" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="165" y="270" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="employees has many meetings through employeemeetings&lt;br&gt;and vice versa" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="-80" width="340" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="in meetings i have access to all employeemeetings which has access to each employee&lt;br&gt;association_proxy('employee_meetings', 'employee')" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="165" y="820" width="570" height="50" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

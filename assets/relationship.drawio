@@ -1,40 +1,40 @@
 <mxfile host="65bd71144e">
     <diagram id="d9kLA6Q3DxlZ0zEGJ8Ev" name="Page-1">
-        <mxGraphModel dx="804" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="985" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="4" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
+                <mxCell id="4" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="Employee" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="2" value="Employee" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="340" y="120" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="Review" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="3" value="Review" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="690" y="120" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="employee has many reviews&lt;br&gt;review belongs to employee" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                <mxCell id="5" value="employee has many reviews&lt;br&gt;review belongs to employee" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="490" y="110" width="170" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="18" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;div style=&quot;line-height: 21px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="310" y="465" width="20" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Review:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="24" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Review:&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="210" y="290" width="140" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employees.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="25" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee_id = db.Column(db.Integer, db.ForeignKey(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'employees.id'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="250" y="320" width="560" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="26" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;reviews&quot;&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="26" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;employee = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Employee'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;reviews&quot;&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="250" y="350" width="550" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="27" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Employee: &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="27" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #569cd6;&quot;&gt;class&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt; Employee: &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="210" y="470" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="28" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;reviews = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Review'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;employee&quot;&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" vertex="1" parent="1">
+                <mxCell id="28" value="&lt;meta charset=&quot;utf-8&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 21px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;reviews = db.relationship(&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;'Review'&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;, back_populates=&lt;/span&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;&quot;employee&quot;&lt;/span&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #d4d4d4;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;fontSize=18;fontFamily=Courier New;" parent="1" vertex="1">
                     <mxGeometry x="250" y="500" width="560" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;fontFamily=Courier New;fontSize=18;entryX=0.05;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=red;" edge="1" parent="1" target="28">
+                <mxCell id="29" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;fontFamily=Courier New;fontSize=18;entryX=0.05;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=red;" parent="1" target="28" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="800" y="365" as="sourcePoint"/>
                         <mxPoint x="300" y="600" as="targetPoint"/>
@@ -45,7 +45,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="31" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;fontFamily=Courier New;fontSize=18;exitX=0.039;exitY=1.044;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=yellow;" edge="1" parent="1" source="26">
+                <mxCell id="31" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;startArrow=classic;endSize=8;startSize=8;fontFamily=Courier New;fontSize=18;exitX=0.039;exitY=1.044;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=yellow;" parent="1" source="26" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="430" y="440" as="sourcePoint"/>
                         <mxPoint x="730" y="490" as="targetPoint"/>
@@ -56,6 +56,9 @@
                             <mxPoint x="730" y="450"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="one employee has many reviews" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="470" y="170" width="200" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
