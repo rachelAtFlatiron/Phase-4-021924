@@ -4,7 +4,7 @@ from flask import Flask, jsonify, make_response, request, abort
 from flask_migrate import Migrate 
 from models import db, Production, Role, Actor
 # 2a. import Api, Resource
-
+from flask_restful import Api, Resource
 
 
 app = Flask(__name__)
@@ -14,7 +14,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 migrate = Migrate(app, db)
 
 # 2b. create Api instance
-
+# hooked up flask app to flask_restful Api
+api = Api(app) 
 
 db.init_app(app)
 
@@ -31,7 +32,7 @@ def index():
     return '<h1>Hello World!</h1>'
 
 @app.route('/productions', methods=["GET", "POST"])
-def Productions():
+def all_productions():
     if(request.method=="GET"):
         q = Production.query.all()
         prod_list = [p.to_dict() for p in q]
@@ -50,7 +51,7 @@ def Productions():
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @app.route('/productions/<int:id>', methods=["GET", "DELETE"])
-def One_Production(id):
+def get_one_production(id):
     if(request.method == 'GET'):
         q = Production.query.filter_by(id=id).first()
         prod_dict = q.to_dict()
@@ -65,6 +66,22 @@ def One_Production(id):
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3a. create resource for roles
+class Roles(Resource):
+    def get(self):
+        q = Role.query.all()
+        q_dict = [r.to_dict(rules=('-production', '-actor')) for r in q]
+        return make_response(q_dict)
+
+    def post(self):
+        data = request.get_json()
+        role = Role(
+            role_name=data.get('role_name'),
+            production_id=data.get('production_id'),
+            actor_id=data.get('actor_id')
+        )
+        db.session.add(role)
+        db.session.commit()
+        return make_response(role.to_dict(), 201)
     
     # 3b. create view method for all roles
     # 3c. add rules to .to_dict()
@@ -74,8 +91,34 @@ def One_Production(id):
 
     
 # 3d. create api endpoint for Roles 
+api.add_resource(Roles, '/roles')
 
-# 5a. create resource for SHOW and DELETE    
+# 5a. create resource for SHOW and DELETE  
+class One_Role(Resource):
+    def get(self, id):
+        q = Role.query.filter_by(id=id).first()
+        return make_response(q.to_dict())
+
+    def delete(self, id):
+        q = Role.query.filter_by(id=id).first()
+        db.session.delete(q)
+        db.session.commit()
+        return make_response({}, 204)
+
+    def patch(self, id):
+        q = Role.query.filter_by(id=id).first()
+        #there are a number of formats you can pass data in
+        #we will be using JSON
+        #since we have headers content-type: application/json
+        data = request.get_json()  
+
+        for attr in data:
+            setattr(q, attr, data.get(attr))
+
+        db.session.add(q)
+        db.session.commit()
+
+        return make_response(q.to_dict())
 
     # 5b. create SHOW view method
 
@@ -90,7 +133,7 @@ def One_Production(id):
 
     
 # 5d. create an API endpoint for One_Role
-
+api.add_resource(One_Role, '/roles/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
