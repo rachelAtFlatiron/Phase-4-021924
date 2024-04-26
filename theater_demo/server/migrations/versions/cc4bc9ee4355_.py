@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: bba825bc1b63
+Revision ID: cc4bc9ee4355
 Revises: 
-Create Date: 2023-05-22 21:24:21.807572
+Create Date: 2024-04-26 11:36:45.556465
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'bba825bc1b63'
+revision = 'cc4bc9ee4355'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,12 +22,11 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
-    sa.Column('name', sa.String(), nullable=False),
-    sa.Column('image', sa.String(), nullable=False),
+    sa.Column('name', sa.String(), nullable=True),
+    sa.Column('image', sa.String(), nullable=True),
     sa.Column('age', sa.Integer(), nullable=True),
     sa.Column('country', sa.String(), nullable=True),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('name')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('productions',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -37,7 +36,7 @@ def upgrade():
     sa.Column('genre', sa.String(), nullable=True),
     sa.Column('length', sa.Integer(), nullable=True),
     sa.Column('year', sa.Integer(), nullable=True),
-    sa.Column('image', sa.String(), nullable=False),
+    sa.Column('image', sa.String(), nullable=True),
     sa.Column('language', sa.String(), nullable=True),
     sa.Column('director', sa.String(), nullable=True),
     sa.Column('description', sa.String(length=50), nullable=True),
@@ -50,8 +49,8 @@ def upgrade():
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('(CURRENT_TIMESTAMP)'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.Column('role_name', sa.String(), nullable=False),
-    sa.Column('production_id', sa.Integer(), nullable=False),
-    sa.Column('actor_id', sa.Integer(), nullable=False),
+    sa.Column('production_id', sa.Integer(), nullable=True),
+    sa.Column('actor_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['actor_id'], ['actors.id'], ),
     sa.ForeignKeyConstraint(['production_id'], ['productions.id'], ),
     sa.PrimaryKeyConstraint('id')

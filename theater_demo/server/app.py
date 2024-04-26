@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from models import db, Production, Role, Actor
 from flask_restful import Api, Resource
 # 7a. import NotFound from werkzeug.exceptions and abort from Flask
+from werkzeug.exceptions import NotFound, UnprocessableEntity, Unauthorized, NotAcceptable, MethodNotAllowed
 # 10a. import UnprocessableEntity
 
 
@@ -94,21 +95,33 @@ class One_Role(Resource):
 
     def get(self, id):
         q = Role.query.filter_by(id=id).first()
+        if not q: 
+            #return make_response({'mesage': 'make_response'}, 404)
+            #raise NotFound('raise NotFound')
+            #abort(404, 'aborting')
+            raise NotFound('raising not found')
         # 7c. If not found, use abort
         return make_response(q.to_dict(), 200)
     def delete(self, id):
         q = Role.query.filter_by(id=id).first()
+        if not q:
+            raise NotFound
         db.session.delete(q)
         db.session.commit()
         return make_response({}, 204)
     def patch(self, id):
         q = Role.query.filter_by(id=id).first()
+        if not q:
+            raise NotFound
         data = request.get_json()
         # 10b. raise unprocessable entity
-        for attr in data:
-            setattr(q, attr, data.get(attr))
-        db.session.add(q)
-        db.session.commit()
+        try:
+            for attr in data:
+                setattr(q, attr, data.get(attr))
+            db.session.add(q)
+            db.session.commit()
+        except:
+            raise UnprocessableEntity
 
         return make_response(q.to_dict(), 200)
     
@@ -124,10 +137,12 @@ class Actors(Resource):
     def post(self):
         data = request.get_json()
         # 10b. raise unprocessable entity
-
-        actor = Actor(name=data.get('name'), image=data.get('image'), age=data.get('age'), country=data.get('country'))
-        db.session.add(actor)
-        db.session.commit()
+        try:
+            actor = Actor(name=data.get('name'), image=data.get('image'), age=data.get('age'), country=data.get('country'))
+            db.session.add(actor)
+            db.session.commit()
+        except:
+            abort(422, 'something went wrong')
 
 
         return make_response(actor.to_dict(), 201)
@@ -150,17 +165,24 @@ class One_Actor(Resource):
         q = Actor.query.filter_by(id=id).first()
         data = request.get_json()
         # 10b. raise Unprocessable Entity
-
-        for attr in data:
-            setattr(q, attr, data.get(attr))
-        db.session.add(q)
-        db.session.commit()
+        try:
+            for attr in data:
+                setattr(q, attr, data.get(attr))
+            db.session.add(q)
+            db.session.commit()
+        except: 
+            raise UnprocessableEntity
 
         return make_response(q.to_dict(), 200)
 api.add_resource(One_Actor, '/actors/<int:id>')
 #~~~~~~~~~~~~~~~~~~~~~~~~~~END YOU DO~~~~~~~~~~~~~~~~~~~~~~~
 
 #7d. create fallback
+@app.errorhandler(NotFound)
+def handle_not_found(e):
+    return make_response({
+        'message': 'data not found'
+    }, 404)
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
