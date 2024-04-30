@@ -15,12 +15,34 @@ function App() {
 	const [actors, setActors] = useState([]);
 
 	// 3a. create a useEffect to fetch from /productions and /actors
+	useEffect(() => {
+		fetch('/productions')
+		.then(res => {
+			if(res.ok){
+				return res.json()
+			} else {
+				console.log('productiosn not found')
+			}
+		})
+		.then(data => setProductions(data))
+	}, [])
+
+	useEffect(() => {
+		fetch('/actors')
+		.then(res => {
+			if(res.ok){
+				return res.json()
+			} else {
+				console.log('actors not found')
+			}
+		})
+		.then(data => setActors(data))
+	}, [])
 	// 3b. save the result in state
 
-
-	const addProduction = (production) =>
-		setProductions((current) => [...current, production]);
-
+	const addProduction = (newProduction) => {
+		setProductions([...productions, newProduction])
+	}
 	return (
 		<div className="App light">
 			<Navigation />
@@ -32,12 +54,12 @@ function App() {
 				<Route path="/productions/:id" element={<ProductionDetail />} />
 
 				{/* 3c. pass productions here down  */}
-				<Route path="/productions" element={<ProductionContainer productions={[]} />} />
+				<Route path="/productions" element={<ProductionContainer productions={productions} />} />
 
 				<Route path="/actors/:id" element={<ActorDetail />} />
 
 				{/* 3c. pass actors here down  */}
-				<Route path="/actors" element={<ActorContainer actors={[]} />} />
+				<Route path="/actors" element={<ActorContainer actors={actors} />} />
 				<Route path="/not-found" element={<NotFound />} />
 
 				<Route exact path="/" element={<Home />} />

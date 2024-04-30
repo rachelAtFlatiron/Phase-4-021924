@@ -27,10 +27,6 @@ worker: <For job queues>
 
 ---
 
-## `CORS`
-
----
-
 ## Formik and yup
 - `Formik`: npm package that makes writing React forms easier
 - `yup`: npm package for object schema validation

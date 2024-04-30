@@ -11,5 +11,11 @@ function ProductionContainer({productions}) {
      </section>
     )
   }
+
+  /*
+
+  productions = [{movie: dune}, {movie: inception}]
+  [<ProductionCard production={dune} />, <ProductionCard production={inception} />]
+  */
   
 export default ProductionContainer

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function ProductionCard({ production }) {
 	const { title, description, image, id } = production;
-
+	
 	return (
 		<li className="card" style={{maxWidth: "300px"}} id={id}>
 			<figure className="image">

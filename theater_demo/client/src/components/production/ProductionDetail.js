@@ -6,8 +6,21 @@ function ProductionDetail() {
 		roles: []
 	});
 
+	const params = useParams()
+	const navigate = useNavigate()
 	// 4a. fetch current production based on params
 	// 4c. if response is not ok, navigate to /not-found
+	useEffect(() => {
+		fetch(`/productions/${params.id}`)
+		.then(res => {
+			if(res.ok){
+				return res.json()
+			} else {
+				navigate('/not-found')
+			}
+		})
+		.then(data => setProduction(data))
+	}, [])
 
 
 	// 4b. destructure the values and display them on page
