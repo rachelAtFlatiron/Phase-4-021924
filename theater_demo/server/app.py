@@ -11,6 +11,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///app.db'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False 
 
 # 2c. create secret key
+app.secret_key = b"\xa5,\x9cy\x00\x82\x0b\x1b\x11Q\xe9.z'\x07\xf7"
 
 migrate = Migrate(app, db)
 
@@ -34,46 +35,69 @@ def get_longest_movies():
 # ✅ 1a. create a GET route for dark-mode
     # ✅ 1c. import ipdb; ipdb.set_trace()
     # ✅ 1d. send a response with cookies info
-
+@app.route('/dark-mode')
+def mode():
+    #import ipdb; ipdb.set_trace()
+    return make_response({
+        "cookies": request.cookies["mode"]
+    })
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ✅ 2a. In `app.py` create a new user
 class Users(Resource):
     def post(self):
-        pass
+        data = request.get_json()
+        user = User(name=data.get('name'), username=data.get('username'))
+        db.session.add(user)
+        db.session.commit()
 
         # ✅ 2b. import session from flask
         # ✅ 2c. generate secret key to hash session
         # ✅ 2d. save the user_id to session hash
+        session['user_id'] = user.id 
+        return make_response(user.to_dict(), 201)
         
 # ✅ 2e. add resource to route `/users`
+api.add_resource(Users, '/users')
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ✅ 5a. create /logout route and set session['user_id'] to None
 @app.route('/logout', methods=["GET"])
 def logout():
-    pass
     # ✅ 5b. return empty response
+    session['user_id'] = None 
+    #import ipdb; ipdb.set_trace()
+    return make_response({}, 200)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 # ✅ 8a. create route `/authenticate-session`
 @app.route('/authenticate-session', methods=["GET"])
 def authorize():
     # ✅ 8b. query for user by `user_id` stored in `session`
+    cookie_id = session.get('user_id')
+    user = User.query.filter_by(id=cookie_id).first()
     # ✅ 8c. if user exists, send user info as response, otherwise `abort` with `401 Unauthorized`
-    pass
+    if user: 
+        return make_response(user.to_dict(), 200)
+    else:
+        return ({'message': 'failed to authenticate'}, 401)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ✅ 10a. create a /login resource with a method
 class Login(Resource):
     def post(self):
-        pass
         # ✅ 10b. get username from request
+        data = request.get_json()
+        user = User.query.filter_by(username=data.get('username')).first()
         # ✅ 10c. if user exists, save id to session and return user
         # ✅ 10d. if user does not exist, raise an error
+        if (user):
+            session['user_id'] = user.id 
+            return make_response(user.to_dict(), 200)
+        else: 
+            return ({'message': 'failed to login'}, 401)
         
 api.add_resource(Login, '/login')            
 
@@ -227,6 +251,10 @@ def handle_not_found(e):
         404
     )
     return response
+
+# @app.before_request
+# def before_request():
+#     import ipdb; ipdb.set_trace()
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
